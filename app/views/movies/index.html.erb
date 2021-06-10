@@ -1,0 +1,28 @@
+<div class="container jumbotron">
+<h3 style='text-align: center;'>Movies</h3>
+  <%= link_to 'Add New Movie', new_movie_path, class: "btn list-todo__btn", style: "margin-left:75%; margin-bottom:3%" %>
+  <% if @movies.present? %>
+    <table class="table container ">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Movie Description</th>
+          <th>Movie Rating</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @movies.each do |m| %>
+          <tr>
+            <td><%= m.movie_name %></td>
+            <td><%= m.movie_description %></td>
+            <td><%= m.movie_rating %></td>
+            <td><%= link_to 'Delete Movie', movie_path(m.id), :method => 'delete', class: "btn list-todo__btn" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h2>There is no Movie Available<h2>
+  <% end %>
+</div>

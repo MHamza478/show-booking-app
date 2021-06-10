@@ -1,0 +1,33 @@
+
+<div class="container jumbotron">
+  <h3 style='text-align: center;'>Available Shows</h3>
+  <%= link_to 'Add New Show', new_show_path, class: "btn list-todo__btn", style: "margin-left:75%; margin-bottom:3%" %>
+  <% if @shows.present? %>
+    <table class="table container ">
+      <thead>
+        <tr>
+          <th>Show Time</th>
+          <th>Show Date</th>
+          <th>Show Room Number</th>
+          <th>Movie</th>
+          <th>Cinema</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @shows.each do |s| %>
+          <tr>
+            <td><%= s.show_time %></td>
+            <td><%= s.show_date %></td>
+            <td><%= s.show_room_number %></td>
+            <td><%= s.movie.movie_name %></td>
+            <td><%= s.cinema.cinema_name %></td>
+            <td><%= link_to 'Delete Show', show_path(s.id), :method => 'delete', class:'btn list-todo__btn' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+      <h2 >There is no Show Available<h2>
+  <% end %>
+</div>

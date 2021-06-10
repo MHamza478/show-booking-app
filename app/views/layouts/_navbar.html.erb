@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="height:80px; background-color:#696969">
+  <div class="container-fluid" style="margin-left:10%; margin-top:20px">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" style="font-weight:bold; font-size:20px">Movie Booking System</a>
+    </div>
+    <ul class="nav navbar-nav" style="margin-left:40%">
+      <li><%= link_to "Home", root_path , {:style=>'color:white; font-weight:bold; font-size:15px'} %></li>
+      <li><%= link_to "Movies", movies_path , {:style=>'color:white; font-weight:bold; font-size:15px'} %></li>
+      <li><%= link_to "Cinemas", cinemas_path , {:style=>'color:white; font-weight:bold; font-size:15px'} %></li>
+    </ul>
+  </div>
+</nav>
+</body>
+</html>

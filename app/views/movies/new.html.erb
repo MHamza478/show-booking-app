@@ -1,0 +1,15 @@
+<section class="list-todo1">
+    <div class="list-todo-content">
+      <form action="/add_movie" method="post">
+        <input class="add-todo__text" type="text" required value="" name="movie_name" placeholder="Enter Movie Name"></br>
+        <input class="add-todo__text" type="text" required value="" name="movie_description" placeholder="Enter Description"></br>
+        <label for="quantity">Rating (out of 10):</label>
+        <input class="add-todo__text" type="number" required value="" min="1" max="10" name="movie_rating" placeholder="Select Movie rating"></br>
+        <input class="btn list-todo__btn" type="submit" value="Add New Movie">
+      </form>
+      </br>
+      <form action="/" method="get">
+        <button class="btn list-todo__btn" type="submit" >Back</button>
+      </form>
+    </div>
+  </section>

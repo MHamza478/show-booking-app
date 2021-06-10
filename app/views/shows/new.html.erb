@@ -1,0 +1,31 @@
+<section class="list-todo1">
+    <div class="list-todo-content">
+      <h2 style="color:white">Withdraw Amount</h2>
+      <form action="/add_show" method="post">
+        <label for="quantity">Select Show Time</label>
+        <input class="add-todo__text" type="time" required value="" name="show_time" placeholder="Select Time"></br>
+        <label for="quantity">Select Show Date</label>
+        <input class="add-todo__text" type="Date" required value="" name="Show_date" placeholder="Select Date"></br>
+        <label for="quantity">Select Room Number</label>
+        <input class="add-todo__text" type="number" min="1" max="200" required value="" name="show_room_number" placeholder="Select Room Number"></br>
+        <label for="quantity">Select Movie to Show</label>
+        <select name="movie_id" class="add-todo__text">
+          <% @movies.each do |m| %>
+            <option value=<%= m.id %> ><%= m.movie_name %></option>
+          <% end %>
+        </select></br>
+        <label for="quantity">Select Cinema for Show</label>
+
+        <select name="cinema_id" class="add-todo__text">
+          <% @cinemas.each do |c| %>
+            <option value= <%= c.id %> ><%= c.cinema_name %></option>
+          <% end %>
+        </select></br>
+        <input class="btn list-todo__btn" type="submit" value="Add New Show">
+      </form>
+      </br>
+      <form action="/" method="get">
+        <button class="btn list-todo__btn" type="submit" >Back</button>
+      </form>
+    </div>
+  </section>

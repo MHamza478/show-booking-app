@@ -1,0 +1,26 @@
+<div class="container jumbotron">
+  <h3 style='text-align: center;'>Cinemas</h3>
+  <%= link_to 'Add New Cinema', new_cinema_path, class: "btn list-todo__btn", style: "margin-left:75%; margin-bottom:3%" %>
+  <% if @cinemas.present? %>
+    <table class="table container ">
+      <thead>
+        <tr>
+          <th>Cinema Name</th>
+          <th>Cinema Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cinemas.each do |c| %>
+          <tr>
+            <td><%= c.cinema_name %></td>
+            <td><%= c.cinema_location %></td>
+            <td><%= link_to 'Delete Cinema', cinema_path(c.id), :method => 'delete', class: "btn list-todo__btn" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+      <h2 >There is no Cinema please add new one!<h2>
+  <% end %>
+</div>
